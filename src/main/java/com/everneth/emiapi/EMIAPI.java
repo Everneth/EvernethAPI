@@ -24,6 +24,12 @@ public class EMIAPI extends JavaPlugin {
     @Override
     public void onEnable()
     {
+        plugin = this;
+        if(!configFile.exists())
+        {
+            this.saveDefaultConfig();
+        }
+
         port(this.getConfig().getInt("api-port"));
         get(Path.Web.ONE_STATS, StatisticsController.getPlayerStats);
         get(Path.Web.ONE_ADV, AdvancementController.getPlayerAdvs);
