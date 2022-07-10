@@ -2,4 +2,8 @@
 #########                              --API Settings--                               #########
 ###############################################################################################
 api-port: 7598
-world-folder: 'WORLD-FOLDER-NAME'
+dbhost: 127.0.0.1:3306
+dbname: emi
+dbuser: emi
+dbpass: 'secret'
+token: ''
