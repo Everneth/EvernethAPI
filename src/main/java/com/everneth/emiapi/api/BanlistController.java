@@ -41,15 +41,13 @@ public class BanlistController {
                 @Override
                 public void run() {
                     EMIAPI.getPlugin().getServer().dispatchCommand(Bukkit.getConsoleSender(), "ban " + player.getName());
-                    commandResponse.setMessage(player.getName() + " has been banned on " + EMIAPI.getPlugin().getConfig().getString("server-name") + ".");
+                    String response = player.getName() + " has been banned on " + EMIAPI.getPlugin().getConfig().getString("server-name") + ".";
+                    commandResponse.setMessage(response);
                     if(player.getAltName() != null)
                     {
                         EMIAPI.getPlugin().getServer().dispatchCommand(Bukkit.getConsoleSender(), "ban " + player.getAltName());
-                        commandResponse.setMessage(player.getName() + " --- ALT Account " + player.getAltName() +
-                                " has been banned on " + EMIAPI.getPlugin().getConfig().getString("server-name") + ".");
+                        commandResponse.setMessage(response + " --- ALT Account " + player.getAltName() + " included.");
                     }
-
-
                 }
             }.runTask(EMIAPI.getPlugin());
         }
@@ -59,12 +57,12 @@ public class BanlistController {
                 @Override
                 public void run() {
                     EMIAPI.getPlugin().getServer().dispatchCommand(Bukkit.getConsoleSender(), "pardon " + player.getName());
-                    commandResponse.setMessage(player.getName() + " has been pardoned on " + EMIAPI.getPlugin().getConfig().getString("server-name") + ".");
+                    String response = player.getName() + " has been pardoned on " + EMIAPI.getPlugin().getConfig().getString("server-name") + ".";
+                    commandResponse.setMessage(response);
                     if(player.getAltName() != null)
                     {
                         EMIAPI.getPlugin().getServer().dispatchCommand(Bukkit.getConsoleSender(), "pardon " + player.getAltName());
-                        commandResponse.setMessage(player.getName() + " --- ALT Account " + player.getAltName() +
-                                " has been pardoned on " + EMIAPI.getPlugin().getConfig().getString("server-name") + ".");
+                        commandResponse.setMessage(response + " --- ALT Account " + player.getAltName() + " included.");
                     }
                 }
             }.runTask(EMIAPI.getPlugin());

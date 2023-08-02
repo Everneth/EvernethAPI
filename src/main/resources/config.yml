@@ -7,3 +7,4 @@ dbname: emi
 dbuser: emi
 dbpass: 'secret'
 token: ''
+server-name: ''
