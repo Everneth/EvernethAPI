@@ -56,7 +56,7 @@ public class WhitelistController {
                 }
             }.runTask(EMIAPI.getPlugin());
         }
-        else if(request.params("wlcommand").equals("remove"))
+        else if(request.params(":wlcommand").equals("remove"))
         {
             new BukkitRunnable() {
                 @Override

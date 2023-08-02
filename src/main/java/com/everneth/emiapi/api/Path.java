@@ -8,5 +8,6 @@ public class Path {
         @Getter public static final String ONE_STATS = "/stats/:uuid";
         @Getter public static final String ONE_ADV = "/advs/:uuid";
         @Setter public static final String WHITELIST_COMMAND = "/cmd/:wlcommand/:player?token=:token";
+        @Setter public static final String BAN_COMMAND = "/cmd/:blcommand/:player?token=:token";
     }
 }

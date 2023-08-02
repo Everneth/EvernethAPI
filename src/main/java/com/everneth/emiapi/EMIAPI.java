@@ -1,10 +1,7 @@
 package com.everneth.emiapi;
 
 import co.aikar.commands.BukkitCommandManager;
-import com.everneth.emiapi.api.AdvancementController;
-import com.everneth.emiapi.api.WhitelistController;
-import com.everneth.emiapi.api.Path;
-import com.everneth.emiapi.api.StatisticsController;
+import com.everneth.emiapi.api.*;
 import com.everneth.emiapi.models.ApiToken;
 import com.everneth.emiapi.utils.FileUtils;
 import com.google.gson.Gson;
@@ -50,6 +47,7 @@ public class EMIAPI extends JavaPlugin {
         get(Path.Web.ONE_STATS, StatisticsController.getPlayerStats);
         get(Path.Web.ONE_ADV, AdvancementController.getPlayerAdvs);
         post(Path.Web.WHITELIST_COMMAND, WhitelistController.runWhitelistCommand);
+        post(Path.Web.BAN_COMMAND, BanlistController.runBanCommand);
         get("*", (request, response) -> "404 not found!!");
 
         Spark.exception(Exception.class, (exception, request, response) -> {exception.printStackTrace();});
